@@ -1,0 +1,10 @@
+Import boto3
+Client=boto3.client(‘ec2’)
+Def lamda_handler (event, context):
+Response=client.describe_instance ()
+[for reservation in response[“Reservations”]:
+For instance in reservation [“instances”]:
+Print (instance[“instanceId”] + ‘stopping”)
+Id = instance[“instanceld”]
+Client.stop_instances(instanceld)
+Return (“completed”)
